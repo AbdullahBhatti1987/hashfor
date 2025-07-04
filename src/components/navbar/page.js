@@ -16,7 +16,6 @@ import ForgotPasswordModal from "./ForgetPassModal";
 import OtpModal from "./OtpModal";
 import { showSuccessToast, showErrorToast } from "@/lib/toast";
 import axios from "axios";
-import { productionLink } from "@/content/data";
 
 const providerOptions = {
   coinbasewallet: {
@@ -373,7 +372,7 @@ export default function Navbar() {
         ...formData,
       };
 
-      const res = await axios.post(`${productionLink}/api/auth/create-account`, payload);
+      const res = await axios.post("/api/auth/create-account", payload);
 
       showSuccessToast("Account created successfully:");
       saveTokenToLocalStorage(res.data.token);
@@ -426,7 +425,7 @@ export default function Navbar() {
     setIsLoading(true);
 
     try {
-      const res = await axios.post(`${productionLink}/api/auth/login`, loginFormData);
+      const res = await axios.post("/api/auth/login", loginFormData);
 
       saveTokenToLocalStorage(res.data.token);
 
