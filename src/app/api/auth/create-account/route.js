@@ -121,7 +121,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { handleCors, corsHeaders } from "@/lib/cors";
 
-export async function POST(request) {
+export default async function POST(request) {
   // ✅ Correct this line
   const cors = handleCors(request);
   if (cors) return cors;

@@ -158,7 +158,7 @@ export function OPTIONS(req) {
 }
 
 // ✅ POST handler
-export async function POST(request) {
+export default async function POST(request) {
   console.log("✅ POST /api/auth/login reached"); // ✅ Debug line
 
   try {
