@@ -35,9 +35,12 @@ export async function POST(request) {
         { status: 401 }
       );
     }
+
+
+
     const token = jwt.sign(
       {
-        id: existedUser._id,
+        id: existedUser._id.toString(),
         email: existedUser.email,
         name: existedUser.name,
         role: existedUser.role,
