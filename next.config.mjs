@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  appDir: true, // ✅ Top-level
+
   images: {
     remotePatterns: [
       {
@@ -7,9 +9,6 @@ const nextConfig = {
         hostname: "www.shutterstock.com",
       },
     ],
-    experimental: {
-      appDir: true, // ✅ must be true for App Router
-    },
   },
 };
 
